@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Final 2</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+                crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+                integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+                crossorigin="anonymous">
+</head>
+
+<body>
+        <div class="container-fluid">
+                <div id="header1" class="header d-flex justify-content-center align-items-center">
+                        <!-- CODE BTN -->
+                        <button id="codeBtn" class='btn btn-light' disabled><i class="fas fa-code"></i></button>
+                        <!-- FIRST BTN GROUP -->
+                        <div class="btn-group">
+                                <button id="boldBtn" class='btn btn-light'><i class="fa fa-bold custom"></i></button>
+                                <button id="italicBtn" class='btn btn-light'><i
+                                                class="fa fa-italic custom"></i></button>
+                                <button id="underlineBtn" class='btn btn-light'><i
+                                                class="fa fa-underline custom"></i></button>
+                                <button id="lineThroughBtn" class='btn btn-light'><i
+                                                class="fa fa-strikethrough custom"></i></button>
+                        </div>
+                        <!-- SECOND BTN GROUP -->
+                        <div class="btn-group">
+                                <button id="alignLeft" class='btn btn-light'><i
+                                                class="fa fa-align-left custom"></i></button>
+                                <button id="alignCenter" class='btn btn-light'><i
+                                                class="fa fa-align-center custom"></i></button>
+                                <button id="alignRight" class='btn btn-light'><i
+                                                class="fa fa-align-right custom"></i></button>
+                        </div>
+                        <!-- THIRD BTN GROUP -->
+                        <div class="btn-group">
+                                <div class="dropdown btn-group">
+                                        <!-- FONT FAMILY BTN -->
+                                        <button id="dropdownMenuButton1" class='btn btn-light dropdown-toggle'
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                                        class="fa fa-font custom"></i></button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                <a class="fontFamilyItem dropdown-item" href="#">Arial</a>
+                                                <a class="fontFamilyItem dropdown-item" href="#">Georgia</a>
+                                                <a class="fontFamilyItem dropdown-item" href="#">Impact</a>
+                                                <a class="fontFamilyItem dropdown-item" href="#">Tahoma</a>
+                                                <a class="fontFamilyItem dropdown-item" href="#">Times New Roman</a>
+                                                <a class="fontFamilyItem dropdown-item" href="#">Verdana</a>
+                                        </div>
+                                </div>
+                                <div class="dropdown btn-group">
+                                        <!-- FONT SIZE BTN -->
+                                        <button id="dropdownMenuButton2" class='btn btn-light dropdown-toggle'
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                                        class="fas fa-text-height"></i></button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                                <a class="fontSizeItem dropdown-item" href="#">12px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">14px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">16px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">18px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">20px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">22px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">25px</a>
+                                                <a class="fontSizeItem dropdown-item" href="#">30px</a>
+                                        </div>
+                                </div>
+                                <!-- FONT COLOR BTN -->
+                                <button class='btn btn-light' data-toggle="modal" data-target="#fontColorModal"><i
+                                                class="fas fa-palette"></i></button>
+                                <!-- BACKGROUND BTN -->
+                                <button class='btn btn-light' data-toggle="modal" data-target="#backgroundModal"><i
+                                                class="fas fa-image"></i></button>
+                        </div>
+                        <!-- SIGN IN BTN -->
+                        <button class='btn btn-light' data-toggle="modal" data-target="#signInModal"><i
+                                        class="fas fa-lock"></i></button>
+                </div>
+                <!-- EDIT MODE -->
+                <div id="header2" class="header d-flex justify-content-center align-items-center">
+                        <div class="btn-group">
+                                <!-- SAVE BTN -->
+                                <button id="saveBtn" class="btn btn-light"><i class="fas fa-save"></i></button>
+                                <!-- TABLE BTN -->
+                                <button id="tableBtn" class="btn btn-light" data-toggle="modal"
+                                        data-target="#tableModal"><i class="fas fa-table"></i></button>
+                                <!-- OL BTN -->
+                                <button id="olBtn" class="btn btn-light" data-toggle="modal" data-target="#olModal"><i
+                                                class="fa fa-list-ol custom"></i></button>
+                                <!-- UL BTN -->
+                                <button id="ulBtn" class="btn btn-light" data-toggle="modal" data-target="#ulModal"><i
+                                                class="fa fa-list-ul custom"></i></button>
+                        </div>
+                </div>
+                <!-- MODALS -->
+                <!-- FONT COLOR MODAL -->
+                <div id="fontColorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fontColor"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content d-flex flex-column p-3">
+                                        <div class="fontColorRow1 d-flex flex-row">
+                                                <div class="fontcolor" style="background-color:#19BD9A">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#15A083">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#2ECD71">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#27AE5F">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#3497DA">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#2882B7">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#9A59B5">
+                                                </div>
+                                        </div>
+                                        <div class="fontColorRow2 d-flex flex-row">
+                                                <div class="fontcolor" style="background-color:#8E45B0">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#33495E">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#293F4D">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#EFC50E">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#F09D11">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#E48022">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#D25600">
+                                                </div>
+                                        </div>
+                                        <div class="fontColorRow3 d-flex flex-row">
+                                                <div class="fontcolor" style="background-color:#E54C3C">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#BD3A26">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#ECF0F1">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#BDC2C5">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#94A6A6">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#808C8C">
+                                                </div>
+                                                <div class="fontcolor" style="background-color:#000">
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- BACKGROUND MODAL -->
+                <div id="backgroundModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="fontColor"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content p-3">
+                                        <div class="modal-header">
+                                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                                        <li class="nav-item">
+                                                                <a class="nav-link active" id="bgColorTab"
+                                                                        data-toggle="tab" href="#bgColor" role="tab"
+                                                                        aria-controls="colors"
+                                                                        aria-selected="true">Colors</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" id="gbImageTab" data-toggle="tab"
+                                                                        href="#bgImage" role="tab"
+                                                                        aria-controls="images"
+                                                                        aria-selected="false">Images</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" id="bgFileTab" data-toggle="tab"
+                                                                        href="#bgFile" role="tab" aria-controls="file"
+                                                                        aria-selected="false">File</a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="tab-content" id="myTabContent">
+                                                <div class="tab-pane fade show active" id="bgColor" role="tabpanel"
+                                                        aria-labelledby="gbColorTab">
+                                                        <div class="d-flex flex-column p-2">
+                                                                <div class="bgColorRow1 d-flex flex-row">
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#19BD9A">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#15A083">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#2ECD71">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#27AE5F">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#3497DA">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#2882B7">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#9A59B5">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="bgColorRow2 d-flex flex-row">
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#8E45B0">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#33495E">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#293F4D">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#EFC50E">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#F09D11">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#E48022">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#D25600">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="bgColorRow3 d-flex flex-row">
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#E54C3C">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#BD3A26">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#ECF0F1">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#BDC2C5">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#94A6A6">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#808C8C">
+                                                                        </div>
+                                                                        <div class="bgColor"
+                                                                                style="background-color:#000">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="bgImage" role="tabpanel"
+                                                        aria-labelledby="bgImageTab">
+                                                        <div class="d-flex flex-column p-2">
+                                                                <div class="bgImageRow1 d-flex flex-row">
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/01.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/02.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/03.jpg)">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="bgImageRow2 d-flex flex-row">
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/04.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/05.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/06.jpg)">
+                                                                        </div>
+                                                                </div>
+                                                                <div class="bgImageRow3 d-flex flex-row">
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/07.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/08.jpg)">
+                                                                        </div>
+                                                                        <div class="bgImage"
+                                                                                style="background-image: url(img/09.jpg)">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="bgFile" role="tabpanel"
+                                                        aria-labelledby="bgFileTab">
+                                                        <div class="input-group mb-3 p-2">
+                                                                <div class="custom-file">
+                                                                        <input type="file" class="custom-file-input"
+                                                                                id="userFile"
+                                                                                aria-describedby="inputGroupFileAddon03">
+                                                                        <label class="custom-file-label"
+                                                                                for="userFile">Choose
+                                                                                file</label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- SIGN UP MODAL -->
+                <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signIn"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <h4 class="modal-title">Sign In</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                <div class="input-group">
+                                                        <input id="loginInput" class="form-control mb-3" type="text"
+                                                                placeholder="Login here...">
+                                                </div>
+                                                <div class="input-group">
+                                                        <input id="passInput" class="form-control" type="password"
+                                                                placeholder="Password here...">
+                                                </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <button type="button" id="signInBtn" class="btn btn-secondary btn-block"
+                                                        data-dismiss="modal">Sign in</button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- TABLE MODAL -->
+                <div class="modal fade bd-example-modal-lg" id="tableModal" tabindex="-1" role="dialog"
+                        aria-labelledby="tabModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content p-3">
+                                        <div class="form">
+                                                <div class="row mb-1">
+                                                        <div class="form-group col">
+                                                                <label for="">Count TR:</label>
+                                                                <input id="trCount" class="form-control" type="text"
+                                                                        placeholder="Type here...">
+                                                        </div>
+                                                        <div class="form-group col">
+                                                                <label for="">Count TD:</label>
+                                                                <input id="tdCount" class="form-control" type="text"
+                                                                        placeholder="Type here...">
+                                                        </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                        <div class="form-group col">
+                                                                <label for="">Width of TD:</label>
+                                                                <input id="tdWidth" class="form-control" type="text"
+                                                                        placeholder="Type here...">
+                                                        </div>
+                                                        <div class="form-group col">
+                                                                <label for="">Height of TD:</label>
+                                                                <input id="tdHeight" class="form-control" type="text"
+                                                                        placeholder="Type here...">
+                                                        </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                        <div class="form-group col-6">
+                                                                <label for="">Width of border:</label>
+                                                                <input id="borderWidth" class="form-control" type="text"
+                                                                        placeholder="Type here...">
+                                                        </div>
+                                                        <div class="form-group row col-6">
+                                                                <div class="form-group col">
+                                                                        <label for="">Style of
+                                                                                border:</label>
+                                                                        <select id="borderStyle" class="form-control">
+                                                                                <option class="borderStyle" selected>
+                                                                                        solid
+                                                                                </option>
+                                                                                <option class="borderStyle">dotted
+                                                                                </option>
+                                                                                <option class="borderStyle">dashed
+                                                                                </option>
+                                                                                <option class="borderStyle">double
+                                                                                </option>
+                                                                                <option class="borderStyle">groove
+                                                                                </option>
+                                                                                <option class="borderStyle">ridge
+                                                                                </option>
+                                                                                <option class="borderStyle">inset
+                                                                                </option>
+                                                                                <option class="borderStyle">outset
+                                                                                </option>
+                                                                        </select>
+                                                                </div>
+                                                                <div class="form-group col">
+                                                                        <label for="">Color of
+                                                                                border:</label>
+                                                                        <input id="borderColor" class="form-control"
+                                                                                type="text" placeholder="Type here...">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                                <div class="row mb-1">
+                                                        <div class="form-group col">
+                                                                <button id="tableReset"
+                                                                        class="btn btn-danger btn-block">Reset</button>
+                                                        </div>
+                                                        <div class="form-group col">
+                                                                <button id="tableCreate"
+                                                                        class="btn btn-success btn-block">Create
+                                                                        table</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- OL MODAL -->
+                <div class="modal fade" id="olModal" tabindex="-1" role="dialog" aria-labelledby="olModal"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content p-3">
+                                        <div class="row">
+                                                <div class="form-group col-12">
+                                                        <label for="">Count li item:</label>
+                                                        <input id="olCount" class="form-control" type="text"
+                                                                placeholder="Type here...">
+                                                </div>
+                                                <div class="form-group col-12">
+                                                        <label for="">Type mark of list:</label>
+                                                        <select id="olListMark" class="form-control">
+                                                                <option class="olMarkItem" selected>decimal</option>
+                                                                <option class="olMarkItem">lower-alpha</option>
+                                                                <option class="olMarkItem">upper-alpha</option>
+                                                                <option class="olMarkItem">lower-roman</option>
+                                                                <option class="olMarkItem">upper-roman</option>
+                                                        </select>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                        <button id="olReset"
+                                                                class="btn btn-danger btn-block">Reset</button>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                        <button id="olCreate" class="btn btn-success btn-block">Create
+                                                                list</button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <!-- UL MODAL -->
+                <div class="modal fade" id="ulModal" tabindex="-1" role="dialog" aria-labelledby="ulModal"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                                <div class="modal-content p-3">
+                                        <div class="row">
+                                                <div class="form-group col-12">
+                                                        <label for="">Count li item:</label>
+                                                        <input id="ulCount" class="form-control" type="text"
+                                                                placeholder="Type here...">
+                                                </div>
+                                                <div class="form-group col-12">
+                                                        <label for="">Type mark of list:</label>
+                                                        <select class="form-control">
+                                                                <option class="ulMarkItem" selected>disc</option>
+                                                                <option class="ulMarkItem">circle</option>
+                                                                <option class="ulMarkItem">square</option>
+                                                                <option class="ulMarkItem">none</option>
+                                                        </select>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                        <button id="ulReset"
+                                                                class="btn btn-danger btn-block">Reset</button>
+                                                </div>
+                                                <div class="form-group col-6">
+                                                        <button id="ulCreate" class="btn btn-success btn-block">Create
+                                                                list</button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div id="outputWindow"></div>
+                <textarea id="textArea" name="" id="" cols="30" rows="10">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam, qui fugiat quisquam explicabo facilis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam, qui fugiat quisquam explicabo facilis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam, qui fugiat quisquam explicabo facilis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam, qui fugiat quisquam explicabo facilis?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem numquam, qui fugiat quisquam explicabo facilis?</p>
+                 </textarea>
+        </div>
+
+
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>
